@@ -19,11 +19,16 @@ def remove_strawberry(contacts)
     if person == "Freddy Mercury"
       person.each do |attribute, value|
         if attribute == :favorite_ice_cream_flavors
-          value.each do |flavor|
-            if flavor[0] == "strawberry"
-              flavor.shift
-            elsif flavor == "strawberry"
-              flavor
+          value.each_with_index do |flavor, index|
+            if flavor == "strawberry"
+              flavor.delete_at(index)
+            end
+          end
+        end
+      end
+    end
+  end
+end
               
       
 end
